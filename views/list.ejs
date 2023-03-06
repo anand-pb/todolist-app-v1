@@ -1,0 +1,43 @@
+<%- include("header") -%>
+    <!-- <h1>It's a <%# kindOfDay %>!</h1>
+    <% if (listTitle === "Monday") {  %>
+        <h1 style="color: green;">ToDo List of <%= listTitle %></h1>
+    <% } else {  %>
+        <h1 style="color: gray">ToDo List of <%= listTitle %></h1>
+    <% }  %> -->
+
+    <!-- <h1 style="color: green;">ToDo List of <%= listTitle %></h1> -->
+
+    <!-- <h1><%= listTitle %></h1> -->
+
+    <!-- <ul> -->
+        <!-- <li>buy keyboard</li>
+        <li>buy sheets</li>
+        <li>play music</li> -->
+        <!-- <% for(var i = 0; i < newListItems.length; i++){  %>
+            <li><%= newListItems[i] %></li>
+        <% }  %> -->
+        
+    <!-- </ul> -->
+
+    <div class="box" id="heading">
+        <!-- <h1><%= listTitle %></h1> -->
+        <h1><%= listTitle %></h1>
+    </div>
+
+    <div class="box">
+        <% for(var i = 0; i < newListItems.length; i++){  %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListItems[i] %></p>
+            </div>
+            
+        <% }  %>
+    
+
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="new item">
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        </form>
+    </div>
+<%- include("footer") -%>        
